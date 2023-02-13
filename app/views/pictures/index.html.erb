@@ -11,7 +11,7 @@
 
 <% @pictures.each do |picture| %>
   <tr>
-    <td><%= image_tag picture.image.url %></td>
+    <td><%= image_tag picture.image.url if picture.image.present? %></td>
     <td><%= picture.user.name %></td>
     <td><%= picture.content %></td>
     <td><%= link_to "詳細を確認", picture_path(picture.id) %></td>
